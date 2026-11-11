@@ -261,11 +261,11 @@ export const AnimatedPinkBackground: React.FC<{
         )}
       </BlurTargetView>
 
-      {Platform.OS !== 'web' && (
+      {Platform.OS !== 'android' && (
         <BlurView
           blurTarget={backdropTarget}
           intensity={quiet ? 10 : 16}
-          blurMethod={Platform.OS === 'android' ? 'dimezisBlurViewSdk31Plus' : undefined}
+          tint="default"
           pointerEvents="none"
           style={StyleSheet.absoluteFill}
         />
@@ -324,6 +324,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 300,
   },
   softOrbLayer: {
     ...StyleSheet.absoluteFill,
